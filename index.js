@@ -38,7 +38,7 @@ var ClipBoard = module.exports = widget.extend({
     });
 
     client.on('error', function (event) {
-      ZeroClipboard.destroy();
+      ZeroClipBoard.destroy();
     });
 
   }
