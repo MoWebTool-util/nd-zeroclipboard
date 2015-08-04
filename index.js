@@ -24,6 +24,8 @@ var ClipBoard = module.exports = widget.extend({
     var that=this,
       client = new ZeroClipBoard(this.get('trigger'));
 
+    this.instance=client;
+
     client.on('ready', function (event) {
 
       client.on('copy', function (event) {
@@ -44,6 +46,19 @@ var ClipBoard = module.exports = widget.extend({
   }
 
 });
+
+ClipBoard.vendor=ZeroClipBoard;
+
+// Indicates if Flash Player is definitely unusable (disabled, outdated, unavailable, or deactivated).
+ClipBoard.isFlashUnusable=function(){
+  return ClipBoard.isFlashUnusable();
+};
+
+//Diagnostic method that describes the state of the browser, Flash Player, and ZeroClipboard
+ClipBoard.state=function(){
+  return ClipBoard.state();
+};
+
 
 
 
